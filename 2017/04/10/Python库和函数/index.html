@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>Python库和函数</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-10</span>
+    <span>
+        <a class="article-category-link" href="/categories/开发/">开发</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Python/">Python</a>►<a class="article-category-link" href="/tags/开发/">开发</a>►<a class="article-category-link" href="/tags/技术/">技术</a>
+    </span>
+  </div>
+  <div>
+    <p>本文包含一些我在开发过程中遇到的一些Python库和函数的分析和用法</p>
+<a id="more"></a>
+<h3 id="一、Python核心函数库"><a href="#一、Python核心函数库" class="headerlink" title="一、Python核心函数库"></a>一、Python核心函数库</h3><h4 id="（1）Dictionary-get-key-default-None"><a href="#（1）Dictionary-get-key-default-None" class="headerlink" title="（1）Dictionary.get(key, default=None)"></a>（1）Dictionary.get(key, default=None)</h4><p>Dictionary：<br>定义：dic = {key: value}<br>dic.get查找返回字典中对应key的值(value)，如果指定的键不存在，返回key参数后边的default值。</p>
+<h4 id="（2）sorted"><a href="#（2）sorted" class="headerlink" title="（2）sorted"></a>（2）sorted</h4><h3 id="二、numpy函数库"><a href="#二、numpy函数库" class="headerlink" title="二、numpy函数库"></a>二、numpy函数库</h3><pre><code>NumPy（Numeric Python）系统是Python的一种开源的数值计算扩展。这种工具可用来存储和处理大型矩阵，比Python自身的嵌套列表（nested list structure)结构要高效的多（该结构也可以用来表示矩阵（matrix））。据说NumPy将Python相当于变成一种免费的更强大的MatLab系统。
+NumPy 提供了许多高级的数值编程工具，如：矩阵数据类型、矢量处理，以及精密的运算库。专为进行严格的数字处理而产生。多为很多大型金融公司使用，以及核心的科学计算组织如：Lawrence Livermore，NASA用其处理一些本来使用C++，Fortran或Matlab等所做的任务。
+</code></pre><h3 id="三、operator函数库"><a href="#三、operator函数库" class="headerlink" title="三、operator函数库"></a>三、operator函数库</h3><pre><code>待补充
+</code></pre><h4 id="operator-itemgetter-序号1，序号2"><a href="#operator-itemgetter-序号1，序号2" class="headerlink" title="operator.itemgetter(序号1，序号2)"></a>operator.itemgetter(序号1，序号2)</h4><p>调用该过程定义一个函数，eg：myget=operator.itemgetter(1)，则get()为一个获取传入参数序号为1的数据的函数。此时：myget([1,2,3])，返回 2 。</p>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

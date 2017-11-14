@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>jQuery开发经验总结</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-05-09</span>
+    <span>
+        <a class="article-category-link" href="/categories/开发/">开发</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/JavaScript/">JavaScript</a>
+    </span>
+  </div>
+  <div>
+    <p>$(object)：将对象（object）转换为DOM对象</p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

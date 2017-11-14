@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>Awesome-Hacking</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-28</span>
+    <span>
+        <a class="article-category-link" href="/categories/信息安全/">信息安全</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Hacking/">Hacking</a>►<a class="article-category-link" href="/tags/Tools/">Tools</a>
+    </span>
+  </div>
+  <div>
+    <p>对GitHub上面收录的一些hacking工具进行一些简单的使用分析。<br><a href="https://github.com/misterch0c/Awesome-Hacking" target="_blank" rel="external">Awesome-Hacking</a></p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

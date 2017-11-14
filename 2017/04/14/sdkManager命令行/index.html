@@ -1,0 +1,87 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>sdkManager命令行</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-14</span>
+    <span>
+        <a class="article-category-link" href="/categories/Android/">Android</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Android/">Android</a>
+    </span>
+  </div>
+  <div>
+    <h4 id="sdkmanager"><a href="#sdkmanager" class="headerlink" title="sdkmanager"></a>sdkmanager</h4><p>The sdkmanager is a command line tool that allows you to view, install, update, and uninstall packages for the Android SDK. If you’re using Android Studio, then you do not need to use this tool and you can instead manage your SDK packages from the IDE.</p>
+<p>The sdkmanager tool is provided in the Android SDK Tools package (25.2.3 and higher) and is located in android_sdk/tools/bin/.</p>
+<a id="more"></a>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p>You can use the sdkmanager to perform the following tasks.<br>List installed and available packages<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdkmanager --list [options]</div></pre></td></tr></table></figure></p>
+<p>Install packages</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdkmanager packages [options]</div></pre></td></tr></table></figure>
+<p>The packages argument is an SDK-style path as shown with the –list command, wrapped in quotes (for example, “build-tools;25.0.2” or “platforms;android-25”). You can pass multiple package paths, separated with a space, but they must each be wrapped in their own set of quotes.</p>
+<p>For example, to get adb and fastboot, install the latest platform tools:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdkmanager <span class="string">"platforms;android-25"</span></div></pre></td></tr></table></figure>
+<p>Alternatively, you can pass a text file that specifies all packages:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdkmanager --package_file=package_file [options]</div></pre></td></tr></table></figure>
+<p>The package_file argument is the location of a text file in which each line is an SDK-style path of a package to install (without quotes).</p>
+<p>To uninstall, simply add the –uninstall flag:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sdkmanager --uninstall packages [options]</div><div class="line">sdkmanager --uninstall --package_file=package_file [options]</div></pre></td></tr></table></figure>
+<h4 id="Update-all-installed-packages"><a href="#Update-all-installed-packages" class="headerlink" title="Update all installed packages"></a>Update all installed packages</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sdkmanager --update [options]</div></pre></td></tr></table></figure>
+<h4 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h4><p>The following table lists the available options for the above commands.<br>Option     Description</p>
+<table>
+<thead>
+<tr>
+<th>--sdk_root=path</th>
+<th>Use the specified SDK path instead of the SDK containing this tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--channel=channel_id</td>
+<td>Include packages in channels up to channel_id. Available channels are:0 (Stable), 1 (Beta), 2 (Dev), and 3 (Canary).</td>
+</tr>
+<tr>
+<td>–include_obsolete</td>
+<td>Include obsolete packages in the package listing or package updates. For use with –list and –update only.</td>
+</tr>
+<tr>
+<td>–no_https</td>
+<td>Force all connections to use HTTP rather than HTTPS.</td>
+</tr>
+<tr>
+<td>–verbose</td>
+<td>Verbose output mode. Errors, warnings and informational messages are printed.</td>
+</tr>
+<tr>
+<td>–proxy={http</td>
+<td>socks}     Connect via a proxy of the given type: either http for high level protocols such as HTTP or FTP, or socks for a SOCKS (V4 or V5) proxy.</td>
+</tr>
+<tr>
+<td>–proxy_host={IP_address</td>
+<td>DNS_address}     IP or DNS address of the proxy to use.</td>
+</tr>
+<tr>
+<td>–proxy_port=port_number</td>
+<td>Proxy port number to connect to.</td>
+</tr>
+</tbody>
+</table>
+<p>Note: If you want to install packages for an operating system different than the current machine, specify the REPO_OS_OVERRIDE environment variable to either “windows”, “macosx”, or “linux”.</p>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

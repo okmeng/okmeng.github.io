@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>ShadowBrokers公开的方程式组织工具包分析</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-28</span>
+    <span>
+        <a class="article-category-link" href="/categories/信息安全/">信息安全</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/技术/">技术</a>
+    </span>
+  </div>
+  <div>
+    <p><a href="https://github.com/x0rz/EQGRP_Lost_in_Translation" target="_blank" rel="external">x0rz-EQGRP_Lost_in_Translation</a><br><a href="https://zhuanlan.zhihu.com/p/26375989" target="_blank" rel="external">知乎-长亭技术专栏</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&amp;mid=2247483709&amp;idx=1&amp;sn=8f19c38422834efafd73eb473ae5cab5" target="_blank" rel="external">云鼎实验室</a><br><a href="http://paper.seebug.org/279/#0-tsina-1-75923-397232819ff9a47a7b7e80a40613cfe1" target="_blank" rel="external">知道创宇-seebug</a></p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

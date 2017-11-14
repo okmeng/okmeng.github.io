@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>k-近邻算法(kNN)实现手写数字识别系统</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-09</span>
+    <span>
+        <a class="article-category-link" href="/categories/开发/">开发</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Python/">Python</a>►<a class="article-category-link" href="/tags/kNN/">kNN</a>►<a class="article-category-link" href="/tags/机器学习/">机器学习</a>►<a class="article-category-link" href="/tags/算法/">算法</a>
+    </span>
+  </div>
+  <div>
+    <p>k-近邻算法</p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

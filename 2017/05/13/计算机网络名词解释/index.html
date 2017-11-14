@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>计算机网络名词解释</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-05-13</span>
+    <span>
+        <a class="article-category-link" href="/categories/网络/">网络</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/原创/">原创</a>►<a class="article-category-link" href="/tags/名词解释/">名词解释</a>
+    </span>
+  </div>
+  <div>
+    <p>对计算机网络常用名词简单介绍。</p>
+<a id="more"></a>
+<h4 id="CIDR"><a href="#CIDR" class="headerlink" title="CIDR"></a>CIDR</h4><p>解释：<br>    CIDR（无类别域间路由，Classless Inter-Domain Routing）是一个在Internet上创建附加地址的方法，这些地址提供给服务提供商（ISP），再由ISP分配给客户。CIDR将路由集中起来，使一个IP地址代表主要骨干提供商服务的几千个IP地址，从而减轻Internet路由器的负担。<br>实例：<br>    例如一个ISP被分配了一些C类网络,这个ISP准备把这些C类网络分配给各个用户群,已经分配了三个C类网段给用户,如果没有实施CIDR技术.ISP的路由器的路由表中会有三条下连网段的路由条目,并且会把它通告给Internet上的路由器.通过实施CIDR技术,我们可以在ISP的路由器上把这三个网段198.168.1.0,198.168.2.0,198.168.3.0汇聚成一条路由198.168.0.0/16.这样ISP路由器只向Internet通告198.168.0.0/16这一条路由,大大减少了路由表的数目.从而为网络路由器节省出了存储空间。 值得注意的是,使用CIDR技术汇聚的网络地址的比特位必须是一致的,如上例所示.如果上例所示的ISP连接了一个172.178.1.0网段,这些网段路由将无法汇聚,无法实现CIDR技术.</p>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>Chrome官网离线安装包下载方法</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-05-21</span>
+    <span>
+        <a class="article-category-link" href="/categories/软件/">软件</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Chrome/">Chrome</a>
+    </span>
+  </div>
+  <div>
+    <p>1、打开 Chrome 浏览器主页：<a href="http://www.google.cn/chrome" target="_blank" rel="external">http://www.google.cn/chrome</a></p>
+<p>2、地址栏最后的网址是这样的：<a href="http://www.google.cn/chrome/browser/desktop/index.html" target="_blank" rel="external">http://www.google.cn/chrome/browser/desktop/index.html</a></p>
+<p>3、在网址最后加上：?standalone=1&amp;platform=win64，回车键后打开的是 64位下载页面，点击“下载Chrome”按钮，得到的就是 Google Chrome 64位离线安装包</p>
+<p>解释下添加的参数：<br>?standalone=1 指离线安装包，<br>platform=win64 指64位Windows 版本。</p>
+<p>如果 “?standalone=1” 下载下来的是32位的Chrome离线包。<br>用“mac”替换“win”，就可以下载 Mac 版本的了。</p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

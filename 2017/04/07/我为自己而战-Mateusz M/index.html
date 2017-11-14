@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>我为自己而战-Mateusz M</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-07</span>
+    <span>
+        <a class="article-category-link" href="/categories/视频/">视频</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/励志/">励志</a>
+    </span>
+  </div>
+  <div>
+    <p>生命不息，奋斗不止。<br>天才源于刻意训练。</p>
+<a id="more"></a>
+<p>成为一个了不起的人<br>到底有多难！？<br>短片油管励志红人Mateusz M新一期励志演讲《我为自己而战》，讲述在梦想道路上你该如何去坚持的故事。<br>在生活中为了得到我们想要的东西，我们必须忍受各种各样的痛苦。</p>
+<p>温馨提示：双击全屏更爽哦—</p>
+<iframe frameborder="0" width="100%" height="100%" src="https://v.qq.com/iframe/player.html?vid=i03906nf20u&tiny=0&auto=0" allowfullscreen></iframe>
+
+<p>《I fight for myself》</p>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

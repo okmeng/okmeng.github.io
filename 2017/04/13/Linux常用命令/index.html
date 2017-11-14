@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>Linux常用命令</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-04-13</span>
+    <span>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Linux/">Linux</a>►<a class="article-category-link" href="/tags/技术/">技术</a>
+    </span>
+  </div>
+  <div>
+    <p>积累一些Linux常用的命令…</p>
+<a id="more"></a>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+

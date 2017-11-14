@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<div style="float:left">
+<article id="art">
+  <div>
+    <h2>Python黑客入门系列教程</h2>
+  </div>
+   <div id='ls'>
+    <span>2017-09-30</span>
+    <span>
+        <a class="article-category-link" href="/categories/信息安全/">信息安全</a>
+    </span>
+    <span>
+        <a class="article-category-link" href="/tags/Hacking/">Hacking</a>►<a class="article-category-link" href="/tags/Python/">Python</a>►<a class="article-category-link" href="/tags/转载/">转载</a>
+    </span>
+  </div>
+  <div>
+    <p>这是一套国外的Python系列教程，从基础入手，到信息安全应用实例。是一套很好Python黑客教程。供各位食用。</p>
+<a id="more"></a>
+<p>##python系列教程(翻译)</p>
+<p>~# python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import urllib<br>from bs4 import BeautifulSoup<br>url = urllib.urlopen(“<a href="http://www.primalsecurity.net" target="_blank" rel="external">http://www.primalsecurity.net</a>“)<br>output = BeautifulSoup(url.read(), ‘lxml’)<br>output.title</p>
+<title>Primal Security Podcast</title>
+
+<p>这是一套python系列教程，学习本套教程不需要你有任何编程背景。教程由最简单的hello world到信息安全应用实例。逐个难点击破:</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>0x0 – 入门</p>
+<p>0x0 – 入门 Pt.2</p>
+<p>0×1 – 端口扫描</p>
+<p>0x2 – 反向shell</p>
+<p>0x3 – 编写Fuzz测试脚本</p>
+<p>0x4 – Python转exe</p>
+<p>0x5 – Web请求</p>
+<p>0x6 – 爬虫</p>
+<p>0x7 – Web扫描和利用</p>
+<p>0x8 – Whois查询</p>
+<p>0x9 – 系统命令调用</p>
+<p>0xA – Python版的Metasploit</p>
+<p>0xB – 伪终端</p>
+<p>0xC – exp编写</p>
+<p>用例1: CVE-2014-6271</p>
+<p>用例2: CVE-2012-1823</p>
+<p>用例3: CVE-2012-3152</p>
+<p>用例4: CVE-2014-3704</p>
+<p>原文地址:<a href="http://www.primalsecurity.net/tutorials/python-tutorials/" target="_blank" rel="external">http://www.primalsecurity.net/tutorials/python-tutorials/</a><br>翻译地址:<a href="https://github.com/smartFlash/pySecurity" target="_blank" rel="external">https://github.com/smartFlash/pySecurity</a></p>
+
+  </div>
+</article>
+</div>
+<script>
+    $("a", "#ls").click(function(){
+        // alert($(this).attr('href'));
+        var ur=$(this).attr('href');
+        // $(this).attr("href","javascript:void(0)");
+        html = $.ajax({url: ur, async:false});
+        $("#art").html(html.responseText);
+        // this.attr("href": '0');
+        return false;  // 不跳转
+    });
+</script>
+
